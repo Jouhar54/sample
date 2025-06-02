@@ -1,0 +1,9 @@
+#myHead {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  width: 30rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
