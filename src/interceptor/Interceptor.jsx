@@ -1,4 +1,5 @@
 import API from "../api/axiosInst";
+import Swal from "sweetalert2";
 
 API.interceptors.request.use(function (config) {
     // Do something before request is sent
@@ -21,7 +22,7 @@ API.interceptors.response.use(function (response) {
 }, function (error) {
 
     if (error.response && error.response.status === 401) {
-        swal.alert("Unauthorized access - redirecting to login");
+        Swal.fire("Unauthorized access - redirecting to login");
     } else {
         console.error("API Error:", error);
     }
@@ -30,7 +31,7 @@ API.interceptors.response.use(function (response) {
         swal.alert('Page not found')
     }
     return Promise.reject(error);
-    
+
 });
 
 export default API;
