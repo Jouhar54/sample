@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import instance from '../../api/axiosInst';
+import API from '../../api/axiosInst';
 
 const BlogCreate = () => {
     const [form, setForm] = useState({
@@ -24,7 +24,7 @@ const BlogCreate = () => {
         event.preventDefault();
 
         try {
-            const res = await instance.post('blogs/123', form);
+            const res = await API.post('blogs/123', form);
             if (res.status) {
                 alert("Blog created!");
                 navigate("/");
